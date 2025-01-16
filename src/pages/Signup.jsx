@@ -51,7 +51,7 @@
                     <input required type="text" placeholder='Enter your Email' name="email" id="email" className='block w-[80%] my-4 p-2 rounded-md border-2 border-black' value={formData.email} onChange={(e)=>setFormData({...formData, email: e.target.value})} />
                     <input required type="password" placeholder='Enter your Password' name="password" id="password"  className={`block w-[80%] my-4 p-2 rounded-md border-2 ${passwordError === "" ? 'border-black' : 'border-red-600'}`}  value={formData.password} onChange={(e)=>setFormData({...formData, password: e.target.value})} />
                     <input required type="password" placeholder='Confirm password' name="confirm-password" id="confirm-password"  className={`block w-[80%] my-4 p-2 rounded-md border-2 ${passwordError === "" ? 'border-black' : 'border-red-600'}`}  value={formData.confirmPassword} onChange={(e)=>setFormData({...formData, confirmPassword: e.target.value})} />
-                    <button type="submit" disabled={status === 'loading'} className='w-[80%] bg-[#0A2240] p-2 rounded-md'>
+                    <button type="submit" disabled={status === 'loading'} className='w-[80%] bg-[#0A2240] p-2 rounded-md text-white'>
                         { status === 'loading' ? 'Signing up...' : 'Sign Up'}
                     </button>
                     { error && <p className='text-red-600'>{error}</p>}
