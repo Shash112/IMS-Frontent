@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-    baseURL: 'http://localhost:5000/api/v1',
+    baseURL: 'https://ims-backend-qj4l.onrender.com/api/v1',
     withCredentials: true
 });
 

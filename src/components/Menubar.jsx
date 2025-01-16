@@ -18,7 +18,7 @@ const Menubar = () => {
         </div>
         <hr />
         <div className='w-[80%] m-auto pl-2 text-white'>
-            <NavLink to={'/dashboard'} className='flex items-center p-2 '>
+            <NavLink to={'/'} className='flex items-center p-2 '>
                 <IoHomeOutline className='font-medium text-xl mr-2'/>
                 <h3 className='font-medium text-xl'>Dashboard</h3>
             </NavLink>

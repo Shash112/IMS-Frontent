@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { login, resetStatus } from '../features/auth/authSlice';
 import getStartedImg from "../assets/get-started.png";
+import logo from "../assets/Logo.png";
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
@@ -34,6 +35,7 @@ const Login = () => {
             <img src={getStartedImg} alt="get-started-image" className='w-full h-full object-fill'/>
         </div>
         <div className='flex-1 m-auto px-20'>
+            <img src={logo} alt="get-started-image" width={400} height={200} className='m-auto pr-[20%]'/>
             <h1 className='text-3xl font-semibold'>Login</h1>
             <p className='text-xl font-normal text-gray-500 '>I am already a member at inventory</p>
             <form onSubmit={handleSubmit} className=''>
