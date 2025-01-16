@@ -17,7 +17,7 @@ const Login = () => {
         if (status === "succeeded") {
             toast.info("Login successful");
             dispatch(resetStatus());
-            navigate("/")
+            navigate("/dashboard")
         }
         if (status === "failed") {
             toast.error("Something went wrong. Try again later!");

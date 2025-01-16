@@ -22,6 +22,7 @@ export const addProduct = createAsyncThunk('products/add', async (product, { rej
 
 export const updateProduct = createAsyncThunk('products/update', async ({id, product}, { rejectWithValue }) => {
     try {
+        console.log(product)
         const response = await updateProductAPI(id, product);
         return response.data;
     } catch (error) {
@@ -82,7 +83,7 @@ const productSlice = createSlice({
               })
               .addCase(updateProduct.fulfilled, (state, action) => {
                 state.updateStatus = 'succeeded';
-                const index = state.items.findIndex((product) => product.id === action.payload.id);
+                const index = state.items.findIndex((product) => product._id === action.payload._id);
                 if (index !== -1) {
                   state.items[index] = action.payload;
                 }

@@ -9,6 +9,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 import Dashboard from './pages/Dashboard'
 import Report from './pages/Report'
 import Store from './pages/Store'
+import ProductDetails from './pages/ProductDetails'
 
 
 function App() {
@@ -19,12 +20,12 @@ function App() {
         <Route path='/login' element={<Login/>} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/' element={<ProtectedRoute><Layout /></ProtectedRoute>} >
-          <Route index element={<Dashboard/>}></Route>
+          <Route path='/dashboard' element={<Dashboard/>}></Route>
           <Route path='/inventroy' element={<Products/>}></Route>
+          <Route path='/inventory/:id' element={<ProductDetails/>}></Route>
           <Route path='/report' element={<Report/>}></Route>
           <Route path='/store' element={<Store />}></Route>
         </Route>
-
       </Routes>
       <ToastContainer />
     </Router>

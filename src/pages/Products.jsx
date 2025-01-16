@@ -4,13 +4,16 @@ import Modal from '../components/Modal';
 import { useDispatch, useSelector } from 'react-redux';
 import { addProduct, fetchProducts } from '../features/products/productSlice';
 import { IoFilter } from "react-icons/io5";
+import Loading from '../components/Loading';
+import { useNavigate } from 'react-router-dom';
 
 const Products = () => {
 
     const dispatch = useDispatch();
-    const { items, status } = useSelector((state) => state.product);  
-    const { addStatus, error} = useSelector((state) => state.product);
+    const { items, status, addStatus, error } = useSelector((state) => state.product);  
+    // const {} = useSelector((state) => state.product);
     const [openModal, setOpenModal] = useState(false);
+    const navigate = useNavigate();
     const [productData, setProductData] = useState({
         name: "",
         description: "",
@@ -61,9 +64,7 @@ const Products = () => {
     }
 
     if (status === 'loading') {
-        return <div className='h-full'>
-            <div>Loading ...</div>
-        </div>
+        return <Loading />
     }
 
     if (items.length === 0) {
@@ -74,9 +75,6 @@ const Products = () => {
 
   return (
     <div className='h-full'>
-
-
-
         {/* Inventory */}
         <div>
             {/* Overall Card */}
@@ -163,7 +161,7 @@ const Products = () => {
                         <tbody>
                             {
                                 items.map((row, rowIndex) => {
-                                    return <tr key={rowIndex}>
+                                    return <tr onClick={()=>{navigate('/inventory/'+rowIndex)}} key={rowIndex} className='cursor-pointer hover:bg-gray-100'>
                                         {
                                             columns.map((column) => {
                                                 if (column.accessor === 'stock'){
