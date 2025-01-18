@@ -29,6 +29,7 @@ const Products = () => {
         { Header: 'Date', accessor: 'createdAt'},
         { Header: 'Stock', accessor: 'stock'}
       ];
+      
       useEffect(()=>{
         dispatch(fetchProducts());
         console.log(items);

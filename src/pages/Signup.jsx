@@ -4,6 +4,7 @@
     import { Link, useNavigate } from 'react-router-dom';
     import { useEffect, useState } from 'react';
     import { toast} from 'react-toastify';
+    import logo from "../assets/Logo.png";
 
     // Validation needs to be added
     const Signup = () => {
@@ -44,6 +45,7 @@
                 <img src={getStartedImg} alt="get-started-image" className='w-full h-full object-fill'/>
             </div>
             <div className='flex-1 m-auto px-20'>
+                <img src={logo} alt="get-started-image" width={400} height={200} className='m-auto pr-[20%]'/>
                 <h1 className='text-3xl font-semibold'>Sign Up</h1>
                 <p className='text-xl font-normal text-gray-500 '>Don&apos;t have account</p>
                 <form onSubmit={handleSubmit} className=''>
