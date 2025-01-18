@@ -12,6 +12,7 @@ import Store from './pages/Store'
 import ProductDetails from './pages/ProductDetails'
 import Supplier from './pages/Supplier'
 import Order from './pages/Order'
+import Profile from './pages/Profile'
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path='/supplier' element={<Supplier />}></Route>
           <Route path='/order' element={<Order />}></Route>
           <Route path='/store' element={<Store />}></Route>
+          <Route path='/profile' element={<Profile />}></Route>
         </Route>
       </Routes>
       <ToastContainer />
